@@ -1,0 +1,517 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #f4f6ff;
+  background-color: #0c1220;
+  --accent: #5a72ff;
+  --accent-strong: #7c90ff;
+  --panel-bg: rgba(19, 27, 45, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #05070d 0%, #1b2340 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 32px;
+  color: inherit;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    padding: 20px;
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.main-nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a.active {
+  color: #fff;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 8px 0;
+  font-size: 2rem;
+}
+
+.muted {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.trainer-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(320px, 1fr) 260px;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .trainer-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+.message {
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.free-settings p {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.hint-box {
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(90, 114, 255, 0.12);
+  border: 1px solid rgba(90, 114, 255, 0.4);
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+}
+
+.board-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.board-shell {
+  position: relative;
+  display: inline-flex;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.board-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: nwse-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  user-select: none;
+}
+
+.resize-handle::after {
+  content: "↔";
+  transform: rotate(-45deg);
+}
+
+.badge-muted {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.puzzle-card,
+.theory-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.puzzle-card h3,
+.theory-card h3 {
+  margin: 12px 0;
+}
+
+.puzzle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: 12px;
+}
+
+.puzzle-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.puzzle-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.puzzle-number {
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 32px;
+  font-size: 0.9rem;
+}
+
+.puzzle-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.puzzle-theme {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.puzzle-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.puzzle-difficulty {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+.theory-card ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.theory-board {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal-card {
+  background: var(--panel-bg);
+  border-radius: 20px;
+  padding: 24px;
+  width: min(420px, 90vw);
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+/* Исправление позиции перетаскиваемой фигуры */
+.react-chessboard-piece {
+  cursor: grab !important;
+}
+
+.react-chessboard-piece:active {
+  cursor: grabbing !important;
+}
+
+/* Улучшение позиционирования при drag */
+[data-piece] {
+  pointer-events: auto;
+  touch-action: none;
+}
+
+/* Исправление смещения при перетаскивании */
+.react-chessboard-piece-dragging {
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+
+/* Альтернативный подход через селектор библиотеки */
+div[style*="position: fixed"] img,
+div[style*="position: absolute"] img {
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+
+/* Стили для модального окна превращения пешки */
+div[title="Choose promotion piece"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+div[title="Choose promotion piece"] > div {
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+div[title="Choose promotion piece"] > div:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: scale(1.1) !important;
+}
+
+div[title="Choose promotion piece"] img {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.learning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.learning-section {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(12px);
+}
+
+.learning-section h2 {
+  margin: 0 0 24px 0;
+  font-size: 1.75rem;
+  color: var(--accent-strong);
+}
+
+.learning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .learning-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .learning-text {
+    flex: 1;
+  }
+  
+  .learning-board {
+    flex-shrink: 0;
+  }
+}
+
+.learning-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(244, 246, 255, 0.9);
+}
+
+.learning-text strong {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.learning-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.animated-board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

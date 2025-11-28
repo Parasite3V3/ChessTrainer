@@ -1,0 +1,93 @@
+[
+  {
+    "id": "p1",
+    "originalId": 1,
+    "fen": "8/5N1p/p7/4qp2/2K1kn2/4b3/8/8 w - - 0 1",
+    "theme": "Мат в 1 ход",
+    "difficulty": "easy",
+    "description": "Мат конём на g5",
+    "sideToMove": "white",
+    "solution": ["f7g5"]
+  },
+  {
+    "id": "p2",
+    "originalId": 2,
+    "fen": "1Q6/8/6p1/7p/6k1/6P1/5K2/q7 w - - 0 1",
+    "theme": "Мат в 1 ход",
+    "difficulty": "easy",
+    "description": "Мат ферзём на c8",
+    "sideToMove": "white",
+    "solution": ["b8c8"]
+  },
+  {
+    "id": "p3",
+    "originalId": 3,
+    "fen": "8/kP1n1R2/8/8/KN6/8/7B/8 w - - 0 1",
+    "theme": "Мат в 1 ход",
+    "difficulty": "easy",
+    "description": "Превращение пешки в ферзя с матом",
+    "sideToMove": "white",
+    "solution": ["b7b8q"]
+  },
+  {
+    "id": "p4",
+    "originalId": 4,
+    "fen": "8/1P3R2/1k6/4n3/KN6/8/7B/8 w - - 0 1",
+    "theme": "Мат в 1 ход",
+    "difficulty": "easy",
+    "description": "Мат слоном на g1",
+    "sideToMove": "white",
+    "solution": ["h2g1"]
+  },
+  {
+    "id": "p5",
+    "originalId": 5,
+    "fen": "8/Q4P2/2k5/8/2K5/8/8/8 w - - 0 1",
+    "theme": "Мат в 2 хода",
+    "difficulty": "medium",
+    "description": "Превращение пешки в коня с матом",
+    "sideToMove": "white",
+    "solution": ["f7f8n", "c6d6", "a7c5"]
+  },
+  {
+    "id": "p6",
+    "originalId": 6,
+    "fen": "k1b5/ppK5/5Q2/8/8/8/8/1R6 w - - 0 1",
+    "theme": "Мат в 2 хода",
+    "difficulty": "medium",
+    "description": "Жертва ферзя с матом ладьёй",
+    "sideToMove": "white",
+    "solution": ["f6a6", "b7a6", "b1b8"]
+  },
+  {
+    "id": "p7",
+    "originalId": 7,
+    "fen": "k2N4/5R2/8/4K3/8/8/8/8 w - - 0 1",
+    "theme": "Мат в 3 хода",
+    "difficulty": "hard",
+    "description": "Координация короля, коня и ладьи",
+    "sideToMove": "white",
+    "solution": ["e5d6", "a8b8", "d8c6", "b8a8", "f7a7"]
+  },
+  {
+    "id": "p8",
+    "originalId": 8,
+    "fen": "5B1R/8/7N/8/8/2b5/p1K5/k7 w - - 0 1",
+    "theme": "Мат в 3 хода",
+    "difficulty": "hard",
+    "description": "Жертва коня с матом слоном",
+    "sideToMove": "white",
+    "solution": ["h6f5", "c3h8", "f5g7", "h8g7", "f8g7"]
+  },
+  {
+    "id": "p9",
+    "originalId": 9,
+    "fen": "4r1k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+    "theme": "Мат ладьёй",
+    "difficulty": "easy",
+    "description": "Ладья захватывает e8",
+    "sideToMove": "white",
+    "solution": ["e1e8"]
+  }
+]
+
